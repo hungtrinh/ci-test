@@ -4,18 +4,18 @@ on:
       - main    
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     # Map a step output to a job output
     outputs:
       output1: ${{ steps.step1.outputs.test }}
       output2: ${{ steps.step2.outputs.test }}
     steps:
       - id: step1
-        run: echo "test=hello" >> "$GITHUB_OUTPUT"
+        run: echo "test=820518176979.dkr.ecr.ap-northeast-1.amazonaws.com/abp_portx-development-angular:main-12a6e14-2023.08.08" >> "$GITHUB_OUTPUT"
       - id: step2
         run: echo "test=world" >> "$GITHUB_OUTPUT"
   job2:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: job1
     steps:
       - env:
